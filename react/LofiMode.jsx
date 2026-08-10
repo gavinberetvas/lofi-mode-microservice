@@ -55,7 +55,7 @@ export function LofiMode({ serverUrl = 'http://127.0.0.1:3050' }) {
     <div className="lofi-mode">
       <audio ref={audio} loop onEnded={() => setPlaying(false)} />
       <button
-        className="lofi-mode__trigger"
+        className="lofi-mode-trigger"
         type="button"
         aria-expanded={open}
         onClick={() => setOpen(!open)}
@@ -64,7 +64,7 @@ export function LofiMode({ serverUrl = 'http://127.0.0.1:3050' }) {
       </button>
 
       {open && (
-        <div className="lofi-mode__menu">
+        <div className="lofi-mode-menu">
           <label>
             Track
             <select

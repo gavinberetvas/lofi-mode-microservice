@@ -1,57 +1,31 @@
 .lofi-mode {
   position: relative;
-  font: 14px Arial, sans-serif;
-  color: #222;
+  font-family: Arial, sans-serif;
 }
 
-.lofi-mode button,
-.lofi-mode select,
-.lofi-mode input {
-  font: inherit;
-}
-
-.lofi-mode__trigger,
-.lofi-mode__menu button {
+.lofi-mode button {
+  padding: 6px 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
   background: white;
-  color: #222;
   cursor: pointer;
 }
 
-.lofi-mode__trigger {
-  padding: 7px 10px;
-}
-
-.lofi-mode__menu {
+.lofi-mode-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 35px;
   right: 0;
-  z-index: 20;
-  display: grid;
-  gap: 10px;
-  width: 190px;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #ccc;
   background: white;
-  box-shadow: 0 4px 14px #0001;
 }
 
-.lofi-mode__menu label {
-  display: grid;
-  gap: 4px;
+.lofi-mode-menu label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-.lofi-mode__menu select,
-.lofi-mode__menu input {
+.lofi-mode-menu select,
+.lofi-mode-menu input {
   width: 100%;
-}
-
-.lofi-mode__menu button {
-  padding: 6px;
-}
-
-.lofi-mode__menu small {
-  color: #777;
 }
