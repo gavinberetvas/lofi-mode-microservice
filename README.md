@@ -1,6 +1,6 @@
 # Lo-fi Mode Microservice
 
-Small CS361-style microservice for a standalone React lo-fi player.
+Small CS361-style JavaScript microservice for a standalone React lo-fi player.
 
 The Express server owns the playlist and audio files. The React component asks
 for the playlist over HTTP, so it can run in a separate app and process.
@@ -24,16 +24,15 @@ The demo client calls `GET /playlist?limit=3` and prints the JSON response.
 
 ## Use the React component
 
-Copy `react-component/LofiMode.jsx` and
-`react-component/lofi-mode.css` into a React app, then render:
+Copy `react/LofiMode.js` and `react/lofi-mode.css` into a React app, then render:
 
-```tsx
+```jsx
 <LofiMode />
 ```
 
 Or point it at another server:
 
-```tsx
+```jsx
 <LofiMode serverUrl="http://127.0.0.1:3050" />
 ```
 
