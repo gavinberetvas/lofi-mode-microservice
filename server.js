@@ -1,11 +1,8 @@
 import cors from 'cors'
 import express from 'express'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 const app = express()
 const port = 3050
-const root = path.dirname(fileURLToPath(import.meta.url))
 
 const tracks = [
   { id: 'song-1', title: 'Rain', file: 'song-1.mp3' },
@@ -14,18 +11,18 @@ const tracks = [
 ]
 
 app.use(cors())
-app.use('/audio', express.static(path.join(root, 'audio')))
+app.use('/audio', express.static('audio'))
 
 app.get('/playlist', (request, response) => {
-  const limit = Number(request.query.limit) || tracks.length
-  const baseUrl = `${request.protocol}://${request.get('host')}`
+  const limit = Number(request.query.limit) || 3
+  const url = `${request.protocol}://${request.get('host')}`
 
   response.json({
     playlistName: 'Lo-fi Mode',
-    tracks: tracks.slice(0, Math.min(limit, tracks.length)).map((track) => ({
+    tracks: tracks.slice(0, limit).map((track) => ({
       id: track.id,
       title: track.title,
-      url: `${baseUrl}/audio/${track.file}`,
+      url: `${url}/audio/${track.file}`,
     })),
   })
 })
