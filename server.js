@@ -5,9 +5,9 @@ const app = express()
 const port = 3050
 
 const tracks = [
-  { id: 'song-1', title: 'Rain', file: 'song-1.mp3' },
-  { id: 'song-2', title: 'Sample Lo-fi Beat', file: 'song-2.mp3' },
-  { id: 'song-3', title: 'Xylophone', file: 'song-3.mp3' },
+  { id: 'song-1', title: 'Lofi Jazz Melody - Restaurant', file: 'song-1.mp3' },
+  { id: 'song-2', title: 'Good Night Lofi Cozy Chill Music', file: 'song-2.mp3' },
+  { id: 'song-3', title: 'Lofi Midnight Club', file: 'song-3.mp3' },
 ]
 
 app.use(cors())
