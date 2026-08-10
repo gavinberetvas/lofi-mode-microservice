@@ -1,9 +1,8 @@
 # Lo-fi Mode Microservice
 
-Small CS361-style JavaScript microservice for a standalone React lo-fi player.
+JavaScript microservice for CS 361.
 
-The Express server owns the playlist and audio files. The React component asks
-for the playlist over HTTP, so it can run in a separate app and process.
+The Express server sends the playlist and audio files. The React component receives the playlist over HTTP, so it can run in a separate app and process.
 
 ## How to use
 
