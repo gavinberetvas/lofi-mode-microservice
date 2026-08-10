@@ -1,25 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import './lofi-mode.css'
 
-type Track = {
-  id: string
-  title: string
-  url: string
-}
-
-type Playlist = {
-  tracks: Track[]
-}
-
-export type LofiModeProps = {
-  serverUrl?: string
-}
-
-export function LofiMode({
-  serverUrl = 'http://127.0.0.1:3050',
-}: LofiModeProps) {
-  const audio = useRef<HTMLAudioElement>(null)
-  const [tracks, setTracks] = useState<Track[]>([])
+export function LofiMode({ serverUrl = 'http://127.0.0.1:3050' }) {
+  const audio = useRef(null)
+  const [tracks, setTracks] = useState([])
   const [selected, setSelected] = useState('')
   const [open, setOpen] = useState(false)
   const [playing, setPlaying] = useState(false)
@@ -31,7 +15,7 @@ export function LofiMode({
     fetch(`${serverUrl}/playlist?limit=3`)
       .then((response) => {
         if (!response.ok) throw new Error()
-        return response.json() as Promise<Playlist>
+        return response.json()
       })
       .then((playlist) => {
         setTracks(playlist.tracks)
@@ -70,7 +54,6 @@ export function LofiMode({
   return (
     <div className="lofi-mode">
       <audio ref={audio} loop onEnded={() => setPlaying(false)} />
-
       <button
         className="lofi-mode__trigger"
         type="button"

@@ -24,7 +24,7 @@ The demo client calls `GET /playlist?limit=3` and prints the JSON response.
 
 ## Use the React component
 
-Copy `react-component/LofiMode.tsx` and
+Copy `react-component/LofiMode.jsx` and
 `react-component/lofi-mode.css` into a React app, then render:
 
 ```tsx
