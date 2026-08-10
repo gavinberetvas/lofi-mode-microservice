@@ -50,7 +50,7 @@ GET http://127.0.0.1:3050/playlist?limit=3
   "tracks": [
     {
       "id": "song-1",
-      "title": "Lofi Jazz Melody - Restaurant",
+      "title": "Lofi-song",
       "url": "http://127.0.0.1:3050/audio/song-1.mp3"
     }
   ]
