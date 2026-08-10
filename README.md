@@ -5,44 +5,33 @@ Small CS361-style JavaScript microservice for a standalone React lo-fi player.
 The Express server owns the playlist and audio files. The React component asks
 for the playlist over HTTP, so it can run in a separate app and process.
 
-## Run it
+## How to use it
+
+Install and start the server:
 
 ```bash
 npm install
 npm start
 ```
 
-The server runs on `http://127.0.0.1:3050`.
-
-## How Boone uses it
-
-Boone has a local copy of the React component in
-`boon-app/src/components/LofiMode.js`. The header renders `<LofiMode />`.
-
-The component asks the separate Express process for:
-
-```text
-http://127.0.0.1:3050/playlist
-```
-
-The server returns the track list, and the browser gets the MP3 files from the
-audio URLs in that response. Boone does not import the Express server directly.
-
-Start the microservice first:
+The server runs on port `3050`. In another terminal, test it with:
 
 ```bash
-npm start
+npm run demo
 ```
 
-Then start Boone in its own terminal using Boone's normal dev command.
-
-## Use the React component
-
-Copy `react/LofiMode.jsx` and `react/lofi-mode.css` into a React app, then render:
+To use the React part, copy `react/LofiMode.js`,
+`react/LofiMode.jsx`, and `react/lofi-mode.css` into a React app. Import the
+JavaScript entry file and render the component:
 
 ```jsx
+import { LofiMode } from './LofiMode.js'
+
 <LofiMode />
 ```
+
+The component requests the playlist over HTTP and plays the MP3 files served by
+this server. Keep the server running while the React app is open.
 
 ## Request and response
 
