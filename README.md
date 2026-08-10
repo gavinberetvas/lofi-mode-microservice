@@ -14,30 +14,13 @@ npm start
 
 The server runs on `http://127.0.0.1:3050`.
 
-In another terminal:
-
-```bash
-npm run demo
-```
-
-The demo client calls `GET /playlist?limit=3` and prints the JSON response.
-
 ## Use the React component
 
-Copy `react/LofiMode.js` and `react/lofi-mode.css` into a React app, then render:
+Copy `react/LofiMode.jsx` and `react/lofi-mode.css` into a React app, then render:
 
 ```jsx
 <LofiMode />
 ```
-
-Or point it at another server:
-
-```jsx
-<LofiMode serverUrl="http://127.0.0.1:3050" />
-```
-
-The three MP3s are short generated placeholders. Replace them in `audio/` when
-the real licensed files and links are ready.
 
 ## Request and response
 
@@ -56,18 +39,4 @@ GET http://127.0.0.1:3050/playlist?limit=3
     }
   ]
 }
-```
-
-## Sequence
-
-```mermaid
-sequenceDiagram
-  participant Boone as React app
-  participant Lofi as LofiMode component
-  participant Server as Express server
-  Boone->>Lofi: render <LofiMode />
-  Lofi->>Server: GET /playlist
-  Server-->>Lofi: playlist JSON
-  Lofi->>Server: GET /audio/song-1.mp3
-  Server-->>Lofi: MP3 bytes
 ```
